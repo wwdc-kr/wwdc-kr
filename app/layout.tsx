@@ -1,5 +1,6 @@
 import './global.css'
 import 'katex/dist/katex.css'
+
 import { RootProvider } from 'fumadocs-ui/provider'
 import type { ReactNode } from 'react'
 
@@ -15,6 +16,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="flex flex-col min-h-screen font-sans">
+
         <RootProvider
           search={{
             options: {
@@ -22,7 +24,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             },
           }}
         >
-          {children}
+            {children}
         </RootProvider>
       </body>
     </html>

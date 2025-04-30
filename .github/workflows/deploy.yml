@@ -22,8 +22,6 @@ jobs:
           bun-version: latest
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
       - name: Install dependencies
         run: bun install
       - name: Build with Next.js

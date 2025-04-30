@@ -1,10 +1,11 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+import { i18n } from '@/lib/i18n';
 
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        🇰🇷 WWDC Winner 모임
+        🇰🇷 WWDC 위너 모임
       </>
     ),
   },
@@ -16,4 +17,5 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
   ],
+  i18n,
 }

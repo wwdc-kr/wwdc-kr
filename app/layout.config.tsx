@@ -13,8 +13,8 @@ export const baseOptions: BaseLayoutProps = {
   },
   links: [
     {
-      text: 'Winners',
-      url: '/winners',
+      text: 'docs',
+      url: '/docs',
       active: 'nested-url',
     },
   ],

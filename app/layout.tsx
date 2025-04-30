@@ -16,7 +16,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="flex flex-col min-h-screen font-sans">
-
         <RootProvider
           search={{
             options: {
@@ -24,7 +23,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             },
           }}
         >
-            {children}
+          {children}
         </RootProvider>
       </body>
     </html>

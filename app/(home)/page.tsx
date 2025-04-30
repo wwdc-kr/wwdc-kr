@@ -1,15 +1,14 @@
+import { KoreanFlag } from '@/lib/flag'
 import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">🇰🇷 대한민국 WWDC 위너 모임</h1>
-      <p className="text-fd-muted-foreground">
-        <Link href="/docs" className="text-fd-foreground font-semibold underline">
-          톺아보기
-        </Link>{' '}
-        페이지를 방문해서 더 알아보세요.
-      </p>
+    <main className="flex-1 flex flex-col items-center justify-center text-center">
+      <KoreanFlag width={48} height={48} />
+      <h1 className="mt-6 mb-3 text-2xl font-bold">대한민국 WWDC 위너 모임</h1>
+      <Link href="/docs" className="font-medium underline text-fd-foreground">
+        톺아보기
+      </Link>
     </main>
   )
 }

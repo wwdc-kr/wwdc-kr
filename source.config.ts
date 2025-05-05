@@ -6,6 +6,10 @@ export const docs = defineDocs({
   dir: 'content/docs',
 })
 
+export const events = defineDocs({
+  dir: 'content/events',
+})
+
 export default defineConfig({
   mdxOptions: {
     remarkPlugins: [remarkMath],

@@ -1,4 +1,4 @@
-import { docsSource } from '@/lib/source'
+import { eventsSource } from '@/lib/source'
 import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
@@ -8,7 +8,7 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = docsSource.getPage(params.slug)
+  const page = eventsSource.getPage(params.slug)
   if (!page) notFound()
 
   const MDXContent = page.data.body
@@ -21,7 +21,7 @@ export default async function Page(props: {
         <MDXContent
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(docsSource, page),
+            a: createRelativeLink(eventsSource, page),
           })}
         />
       </DocsBody>
@@ -30,14 +30,14 @@ export default async function Page(props: {
 }
 
 export async function generateStaticParams() {
-  return docsSource.generateParams()
+  return eventsSource.generateParams()
 }
 
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>
 }) {
   const params = await props.params
-  const page = docsSource.getPage(params.slug)
+  const page = eventsSource.getPage(params.slug)
   if (!page) notFound()
 
   return {

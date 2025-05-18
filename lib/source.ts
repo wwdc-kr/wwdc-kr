@@ -1,4 +1,4 @@
-import { docs, events } from '@/.source'
+import { docs, events, apps } from '@/.source'
 import { shuffle } from 'es-toolkit'
 import { loader } from 'fumadocs-core/source'
 
@@ -26,4 +26,9 @@ export const eventsSource = loader({
       return node
     },
   }
+})
+
+export const appsSource = loader({
+  baseUrl: '/apps',
+  source: apps.toFumadocsSource()
 })

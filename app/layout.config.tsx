@@ -23,5 +23,11 @@ export const baseOptions: BaseLayoutProps = {
       url: '/events',
       active: 'nested-url',
     },
+    {
+      type: 'main',
+      text: '위너들의 앱',
+      url: '/apps',
+      active: 'nested-url',
+    },
   ],
 }

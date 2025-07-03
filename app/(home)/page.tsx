@@ -12,7 +12,9 @@ export default function HomePage() {
   return (
     <main className="flex-1 flex flex-col items-center justify-center text-center">
       <KoreanFlag width={48} height={48} />
-      <h1 className="mt-6 mb-12 text-2xl font-bold">대한민국 WWDC 위너 모임</h1>
+      <h1 className="mt-6 mb-4 text-2xl font-bold">대한민국 WWDC 위너 모임</h1>
+
+      <h2 className="mt-0 mb-12 text-xl font-bold">WWDC Winners Korea</h2>
 
       <div className="mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">

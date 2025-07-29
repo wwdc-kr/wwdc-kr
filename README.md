@@ -1,4 +1,4 @@
-# 🇰🇷 대한민국 WWDC 위너 모임
+# 🇰🇷 WWDC 위너 모임 & Community for Swift Students
 
 ## 프로젝트 설정
 

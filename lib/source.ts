@@ -20,7 +20,7 @@ export const eventsSource = loader({
   source: events.toFumadocsSource(),
   pageTree: {
     attachFolder(node) {
-      if (node.name === '위너 주관 이벤트') {
+      if (node.name === 'CSS 주관 이벤트') {
         node.children = shuffle(node.children)
       }
       return node

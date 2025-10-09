@@ -6,7 +6,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <span className="flex items-center gap-2">
         <KoreanFlag />
-        CSS & WWDC Winners Korea
+        Community for Swift Students
       </span>
     ),
   },

@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <main className="flex-1 flex flex-col items-center justify-center text-center">
       <KoreanFlag width={48} height={48} />
-      <h1 className="mt-6 mb-12 text-2xl font-bold">Community for Swift Students & WWDC Winners Korea</h1>
-
+      <h1 className="mt-6 mb-12 text-2xl font-bold">Swift Student Challenge에 관심 있는 모두를 위한 커뮤니티<br/>For all students, by Swift Student Challenge winners</h1>
+      
       <div className="mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">
           <Link
@@ -44,7 +44,7 @@ export default function HomePage() {
               className="h-full size-48 widget-discord shadow-lg p-6 flex flex-col justify-between shadow-sm"
             >
               <FaDiscord className="h-12 w-12 text-white drop-shadow-md" />
-              <span className="text-base font-bold text-white drop-shadow-sm text-left">Discord</span>
+              <span className="text-base font-bold text-white drop-shadow-sm text-left">👋Welcome!<br/>Feel free to join<br/>Discord</span>
             </Squircle>
           </Link>
 

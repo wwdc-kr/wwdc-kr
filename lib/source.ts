@@ -1,17 +1,19 @@
-import { apps, docs, events } from 'fumadocs-mdx:collections/server'
+import { content } from 'fumadocs-mdx:collections/server'
 import { loader } from 'fumadocs-core/source'
+import { icons } from 'lucide-react'
+import { createElement } from 'react'
 
-export const docsSource = loader({
-  baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
-})
+function createIconElement(icon: string | undefined) {
+  if (!icon) {
+    return
+  }
+  if (icon in icons) {
+    return createElement(icons[icon as keyof typeof icons])
+  }
+}
 
-export const eventsSource = loader({
-  baseUrl: '/events',
-  source: events.toFumadocsSource(),
-})
-
-export const appsSource = loader({
-  baseUrl: '/apps',
-  source: apps.toFumadocsSource(),
+export const source = loader({
+  baseUrl: '/',
+  source: content.toFumadocsSource(),
+  icon: createIconElement,
 })

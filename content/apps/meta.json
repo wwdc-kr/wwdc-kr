@@ -1,5 +1,6 @@
 {
-  "title": "🇰🇷 WWDC 위너 모임 - 위너들의 앱",
-  "root": true,
-  "pages": []
+  "title": "위너들의 앱",
+  "icon": "AppWindow",
+  "defaultOpen": true,
+  "pages": ["index"]
 }

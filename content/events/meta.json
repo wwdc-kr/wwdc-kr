@@ -1,5 +1,6 @@
 {
-  "title": "🇰🇷 WWDC 위너 모임 - 이벤트",
-  "root": true,
-  "pages": ["winners"]
+  "title": "이벤트",
+  "icon": "Calendar",
+  "defaultOpen": true,
+  "pages": ["index", "guidelines"]
 }

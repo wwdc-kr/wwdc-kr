@@ -1,12 +1,12 @@
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
-import { eventsSource } from '@/lib/source'
+import { source } from '@/lib/source'
 import { getMDXComponents } from '@/mdx-components'
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
-  const page = eventsSource.getPage(params.slug)
+  const page = source.getPage(['events', ...(params.slug ?? [])])
   if (!page) {
     notFound()
   }
@@ -20,8 +20,7 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(eventsSource, page),
+            a: createRelativeLink(source, page),
           })}
         />
       </DocsBody>
@@ -30,12 +29,20 @@ export default async function Page(props: { params: Promise<{ slug?: string[] }>
 }
 
 export async function generateStaticParams() {
-  return eventsSource.generateParams()
+  return source
+    .generateParams()
+    .filter((params) => {
+      const slug = params.slug ?? []
+      return slug[0] === 'events'
+    })
+    .map((params) => ({
+      slug: params.slug?.slice(1),
+    }))
 }
 
 export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
-  const page = eventsSource.getPage(params.slug)
+  const page = source.getPage(['events', ...(params.slug ?? [])])
   if (!page) {
     notFound()
   }

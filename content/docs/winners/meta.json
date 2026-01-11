@@ -1,3 +1,11 @@
 {
-  "title": "지난 위너들"
+  "title": "지난 위너들",
+  "icon": "Trophy",
+  "defaultOpen": true,
+  "pages": [
+    "sunghyun-cho",
+    "jaesung-lee-1920",
+    "daegun-choi-22",
+    "seokmin-jung"
+  ]
 }

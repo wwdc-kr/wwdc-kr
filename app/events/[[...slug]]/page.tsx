@@ -1,27 +1,26 @@
-import { eventsSource } from '@/lib/source'
-import { getMDXComponents } from '@/mdx-components'
 import { createRelativeLink } from 'fumadocs-ui/mdx'
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from 'fumadocs-ui/page'
 import { notFound } from 'next/navigation'
+import { source } from '@/lib/source'
+import { getMDXComponents } from '@/mdx-components'
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>
-}) {
+export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
-  const page = eventsSource.getPage(params.slug)
-  if (!page) notFound()
+  const page = source.getPage(['events', ...(params.slug ?? [])])
+  if (!page) {
+    notFound()
+  }
 
   const MDXContent = page.data.body
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage full={page.data.full} toc={page.data.toc}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
         <MDXContent
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(eventsSource, page),
+            a: createRelativeLink(source, page),
           })}
         />
       </DocsBody>
@@ -30,15 +29,23 @@ export default async function Page(props: {
 }
 
 export async function generateStaticParams() {
-  return eventsSource.generateParams()
+  return source
+    .generateParams()
+    .filter((params) => {
+      const slug = params.slug ?? []
+      return slug[0] === 'events'
+    })
+    .map((params) => ({
+      slug: params.slug?.slice(1),
+    }))
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>
-}) {
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params
-  const page = eventsSource.getPage(params.slug)
-  if (!page) notFound()
+  const page = source.getPage(['events', ...(params.slug ?? [])])
+  if (!page) {
+    notFound()
+  }
 
   return {
     title: page.data.title,

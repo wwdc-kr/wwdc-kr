@@ -1,5 +1,6 @@
 {
-  "title": "🇰🇷 WWDC 위너 모임",
-  "root": true,
-  "pages": ["winners"]
+  "title": "톺아보기",
+  "icon": "BookOpen",
+  "defaultOpen": true,
+  "pages": ["index", "winners"]
 }

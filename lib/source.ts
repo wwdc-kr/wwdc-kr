@@ -1,34 +1,19 @@
-import { docs, events, apps } from '@/.source'
-import { shuffle } from 'es-toolkit'
+import { content } from 'fumadocs-mdx:collections/server'
 import { loader } from 'fumadocs-core/source'
+import { icons } from 'lucide-react'
+import { createElement } from 'react'
 
-export const docsSource = loader({
-  baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
-  pageTree: {
-    attachFolder(node) {
-      if (node.name === '지난 위너들') {
-        node.children = shuffle(node.children)
-      }
-      return node
-    },
-  },
-})
-
-export const eventsSource = loader({
-  baseUrl: '/events',
-  source: events.toFumadocsSource(),
-  pageTree: {
-    attachFolder(node) {
-      if (node.name === 'CSS 주관 이벤트') {
-        node.children = shuffle(node.children)
-      }
-      return node
-    },
+function createIconElement(icon: string | undefined) {
+  if (!icon) {
+    return
   }
-})
+  if (icon in icons) {
+    return createElement(icons[icon as keyof typeof icons])
+  }
+}
 
-export const appsSource = loader({
-  baseUrl: '/apps',
-  source: apps.toFumadocsSource()
+export const source = loader({
+  baseUrl: '/',
+  source: content.toFumadocsSource(),
+  icon: createIconElement,
 })

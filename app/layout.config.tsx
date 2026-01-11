@@ -1,5 +1,5 @@
-import { KoreanFlag } from '@/lib/flag'
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared'
+import { KoreanFlag } from '@/lib/flag'
 
 export const baseOptions: BaseLayoutProps = {
   nav: {

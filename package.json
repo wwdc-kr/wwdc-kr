@@ -23,6 +23,8 @@
     "katex": "^0.16.27",
     "lefthook": "^2.0.13",
     "lucide-react": "^0.562.0",
+    "motion": "^12.26.2",
+    "motion-plus": "^1.5.1",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

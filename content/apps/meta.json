@@ -1,6 +1,0 @@
-{
-  "title": "위너들의 앱",
-  "icon": "AppWindow",
-  "defaultOpen": true,
-  "pages": ["index"]
-}

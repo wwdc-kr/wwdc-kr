@@ -1,6 +1,0 @@
-{
-  "title": "이벤트",
-  "icon": "Calendar",
-  "defaultOpen": true,
-  "pages": ["index", "guidelines"]
-}

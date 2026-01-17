@@ -5,6 +5,7 @@ import { SquircleNoScript } from '@squircle-js/react'
 import { RootProvider } from 'fumadocs-ui/provider/next'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { GlobalCursor } from '@/components/global-cursor'
 
 export const metadata: Metadata = {
   title: '🇰🇷 Community for Swift Students & WWDC Winners Korea',
@@ -48,6 +49,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           }}
         >
           {children}
+          <GlobalCursor />
         </RootProvider>
       </body>
     </html>

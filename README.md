@@ -1,5 +1,7 @@
 # 🇰🇷 WWDC 위너 모임 & Community for Swift Students
 
+누구나 Pull Request 환영!
+
 ## 프로젝트 설정
 
 1. **Bun 설치**  

@@ -1,9 +1,5 @@
-import { redirect } from 'next/navigation'
+import EndedEvent from '@/app/components/ended-event'
 
-export default function WatchParty26Page() {
-  redirect('https://developeracademy.postech.ac.kr/wwdc26-watchpartyinseoul')
+export default function WatchPartyWWDC25() {
+  return <EndedEvent />
 }
-
-// 정적 내보내기를 위한 설정
-export const dynamic = 'force-static'
-export const revalidate = false
